@@ -1,3 +1,13 @@
 <p>This is the server data</p>
-<p>The id of server is {{ serverId }} and its status is {{ getServerStatus()}}</p>
-<button class="btn btn-primary" [disabled]="changeStatus">Add Server</button>
+
+
+
+
+<input type="text"
+       class="form-control"
+       [(ngModel)]="serverName">
+
+<button class="btn btn-primary" (click)="addServer()">Add Server</button>
+<p *ngIf="isServerCreated">{{serverStatus}}</p>
+<h3>The name of Servers are:</h3>
+  <p *ngFor="let server of serverNames">{{server}}</p>
