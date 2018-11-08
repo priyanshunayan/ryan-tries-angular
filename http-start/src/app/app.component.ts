@@ -36,6 +36,15 @@ export class AppComponent {
       console.log(err);
     });
   }
+  onGet() {
+    this.serverService.getServer()
+      .subscribe((res) => {
+        console.log(res);
+      },
+    (err) => {
+      console.log(err);
+    });
+  }
   private generateId() {
     return Math.round(Math.random() * 10000);
   }
